@@ -10,6 +10,11 @@ resource "aws_lambda_function" "cloud_lambda" {
 
 }
 
+resource "aws_iam_role" "iam_for_lambda" {
+  name               = "iam_for_lambda"
+  assume_role_policy = data.aws_iam_policy_document.assume_role.json
+}
+  
 data "aws_iam_policy_document" "assume_role" {
   statement {
     effect = "Allow"
@@ -23,10 +28,6 @@ data "aws_iam_policy_document" "assume_role" {
   }
 }
 
-resource "aws_iam_role" "iam_for_lambda" {
-  name               = "iam_for_lambda"
-  assume_role_policy = data.aws_iam_policy_document.assume_role.json
-}
 
 #AWS IAM Policy for dynamodb
 resource "aws_iam_policy" "iam_policy_for_cloud_resume" {
@@ -128,7 +129,7 @@ resource "aws_iam_policy" "iam_policy_for_cloud_resume" {
             "Action": [
                 "iam:CreateServiceLinkedRole"
             ],
-            "Resource": "*",
+            "Resource": "arn:aws:dynamodb:us-east-1:037908621709:table/cloud_resume_table",
             "Condition": {
                 "StringEquals": {
                     "iam:AWSServiceName": [
