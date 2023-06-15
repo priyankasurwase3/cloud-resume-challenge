@@ -229,9 +229,8 @@ h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../img/hero-bg(2).jpg") top center;
+  background: url("../img/hero.jpg") top center;
   background-size: cover;
-  
 }
 
 #hero:before {
@@ -275,7 +274,7 @@ h6 {
 
 @media (min-width: 1024px) {
   #hero {
-    
+    background-attachment: fixed;
   }
 }
 
@@ -1079,10 +1078,6 @@ section {
   text-align: center;
 }
 
-
-#footer .counter-number{
-  text-align: center;
-}
 #footer .credits {
   padding-top: 5px;
   text-align: center;
