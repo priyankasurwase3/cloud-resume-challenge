@@ -1,4 +1,4 @@
-
+	
 body {
   font-family: "Open Sans", sans-serif;
   color: #272829;
@@ -1057,6 +1057,7 @@ section {
   color: #f4f6fd;
   font-size: 14px;
   position: fixed;
+  text-align: center;
   left: 0;
   bottom: 0;
   width: 300px;
@@ -1078,6 +1079,7 @@ section {
 @media (max-width: 1199px) {
   #footer {
     position: static;
+	text-align: center;
     width: auto;
     padding-right: 20px 15px;
   }
